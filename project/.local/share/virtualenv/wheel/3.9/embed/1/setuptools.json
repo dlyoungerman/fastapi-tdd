@@ -1,0 +1,12 @@
+{
+  "completed": "2021-04-25T05:34:43.440439Z",
+  "periodic": true,
+  "started": "2021-04-25T05:34:38.216617Z",
+  "versions": [
+    {
+      "filename": "setuptools-56.0.0-py3-none-any.whl",
+      "found_date": "2021-04-25T05:34:39.230870Z",
+      "release_date": "2021-04-09T00:24:04.000000Z"
+    }
+  ]
+}

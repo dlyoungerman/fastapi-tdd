@@ -1,0 +1,17 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+asyncpg = "==0.22.0"
+fastapi = "==0.63.0"
+tortoise-orm = "==0.16.21"
+uvicorn = "==0.13.4"
+autopep8 = "*"
+
+[dev-packages]
+pytest = "*"
+
+[requires]
+python_version = "3.9"
