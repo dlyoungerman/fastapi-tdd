@@ -9,7 +9,8 @@ fastapi = "==0.63.0"
 tortoise-orm = "==0.16.21"
 uvicorn = "==0.13.4"
 autopep8 = "*"
-pytest = "*"
+pytest = "==6.2.2"
+requests = "==2.25.1"
 
 [dev-packages]
 pytest = "*"
