@@ -1,4 +1,4 @@
-import os
+import logging
 
 from fastapi import FastAPI, Depends
 from tortoise.contrib.fastapi import register_tortoise
@@ -6,15 +6,16 @@ from tortoise.contrib.fastapi import register_tortoise
 from app.api import ping
 from app.db import init_db
 
+log = logging.getLogger("uvicorn")
 
-def creation_application() -> FastAPI:
+def create_application() -> FastAPI:
     application = FastAPI()
     application.include_router(ping.router)
 
     return application
 
 
-app = creation_application()
+app = create_application()
 
 
 @app.on_event("startup")
