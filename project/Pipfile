@@ -11,6 +11,7 @@ uvicorn = "==0.13.4"
 autopep8 = "*"
 pytest = "==6.2.2"
 requests = "==2.25.1"
+pytest-cov = "==2.11.1"
 
 [dev-packages]
 pytest = "*"

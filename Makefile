@@ -1,4 +1,4 @@
-.PHONY: down test up update-db
+.PHONY: down test up update-db test
 
 down:
 	docker-compose down
@@ -10,4 +10,10 @@ update-db:
 	docker-compose exec web pipenv run python app/db.py
 
 test:
-	docker-compose exec web pipenv run python -m pytest
+	docker-compose exec web pipenv run python -m pytest -v
+
+test-cov:
+	docker-compose exec web pipenv run python -m pytest --cov="."
+
+test-cov-html:
+	docker-compose exec web pipenv run python -m pytest --cov="." --cov-report html
