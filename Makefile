@@ -1,4 +1,4 @@
-.PHONY: down test up update-db test
+.PHONY: down test up update-db test test-cov test-cov-html lint black-check black-diff black
 
 down:
 	docker-compose down
@@ -19,4 +19,13 @@ test-cov-html:
 	docker-compose exec web pipenv run python -m pytest --cov="." --cov-report html
 
 lint:
-	docker-compose exec web pipenv run flake8 /usr/src/app
+	docker-compose exec web pipenv run flake8 /usr/src/app/app
+
+black-check:
+	docker-compose exec web pipenv run black /usr/src/app/app --check
+
+black-diff:
+	docker-compose exec web pipenv run black /usr/src/app/app --diff
+
+black:
+	docker-compose exec web pipenv run black /usr/src/app/app

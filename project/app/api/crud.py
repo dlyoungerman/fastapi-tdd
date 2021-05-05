@@ -17,9 +17,6 @@ async def get_all() -> List:
 
 
 async def post(payload: SummaryPayloadSchema) -> int:
-    summary = TextSummary(
-        url=payload.url,
-        summary="dummy summary"
-    )
+    summary = TextSummary(url=payload.url, summary="dummy summary")
     await summary.save()
     return summary.id
