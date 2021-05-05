@@ -1,4 +1,4 @@
-.PHONY: down test up update-db test test-cov test-cov-html lint black-check black-diff black
+.PHONY: down test up update-db test test-cov test-cov-html lint black-check black isort-check isort
 
 down:
 	docker-compose down
@@ -22,10 +22,15 @@ lint:
 	docker-compose exec web pipenv run flake8 /usr/src/app/app
 
 black-check:
-	docker-compose exec web pipenv run black /usr/src/app/app --check
-
-black-diff:
-	docker-compose exec web pipenv run black /usr/src/app/app --diff
+	docker-compose exec web pipenv run black --check /usr/src/app/app
+	docker-compose exec web pipenv run black --diff /usr/src/app/app
 
 black:
 	docker-compose exec web pipenv run black /usr/src/app/app
+
+isort-check:
+	docker-compose exec web pipenv run isort --check-only /usr/src/app/app
+	docker-compose exec web pipenv run isort --diff /usr/src/app/app
+
+isort:
+	docker-compose exec web pipenv run isort /usr/src/app/app
