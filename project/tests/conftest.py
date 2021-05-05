@@ -42,5 +42,3 @@ def test_app_with_db():
         yield test_client
 
     # tear down
-
-

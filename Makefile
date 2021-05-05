@@ -17,3 +17,6 @@ test-cov:
 
 test-cov-html:
 	docker-compose exec web pipenv run python -m pytest --cov="." --cov-report html
+
+lint:
+	docker-compose exec web pipenv run flake8 /usr/src/app

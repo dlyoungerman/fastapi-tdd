@@ -8,6 +8,7 @@ from tortoise.contrib.fastapi import register_tortoise
 
 log = logging.getLogger("uvicorn")
 
+
 def init_db(app: FastAPI) -> None:
     register_tortoise(
         app,

@@ -12,6 +12,8 @@ autopep8 = "*"
 pytest = "==6.2.2"
 requests = "==2.25.1"
 pytest-cov = "==2.11.1"
+flake8 = "==3.9.1"
+black = "==20.8b1"
 
 [dev-packages]
 pytest = "*"
