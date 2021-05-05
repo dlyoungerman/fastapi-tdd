@@ -13,7 +13,7 @@ test:
 	docker-compose exec web pipenv run python -m pytest -v
 
 test-unit:
-	docker-compose exec web pipenv run python -m pytest -v -k unit
+	docker-compose exec web pipenv run python -m pytest -v -k "unit"
 
 test-cov:
 	docker-compose exec web pipenv run python -m pytest --cov="."
