@@ -1,4 +1,4 @@
-.PHONY: down test up update-db test test-cov test-cov-html lint black-check black isort-check isort
+.PHONY: down test up update-db test test-unit test-cov test-cov-html lint black-check black isort-check isort
 
 down:
 	docker-compose down
@@ -11,6 +11,9 @@ update-db:
 
 test:
 	docker-compose exec web pipenv run python -m pytest -v
+
+test-unit:
+	docker-compose exec web pipenv run python -m pytest -v -k unit
 
 test-cov:
 	docker-compose exec web pipenv run python -m pytest --cov="."
