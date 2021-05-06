@@ -1,4 +1,4 @@
-.PHONY: down test up update-db test test-unit test-cov test-cov-html lint black-check black isort-check isort
+.PHONY: down test up update-db test test-unit test-cov test-cov-html lint black-check black isort-check isort psql
 
 down:
 	docker-compose down
@@ -37,3 +37,6 @@ isort-check:
 
 isort:
 	docker-compose exec web pipenv run isort /usr/src/app/app
+
+psql:
+	docker-compose exec web-db psql -U postgres
