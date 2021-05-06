@@ -16,6 +16,7 @@ flake8 = "==3.9.1"
 black = "==20.8b1"
 isort = "==5.7.0"
 pytest-xdist = "==2.2.1"
+newspaper3k = "==0.2.8"
 
 [dev-packages]
 pytest = "*"
